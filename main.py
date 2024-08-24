@@ -3,7 +3,7 @@ import asyncio, os
 
 async def handle_pdf(Handler):
     try:
-        web_name, web_no, max_no = input("웹툰의 이름과 번호, 마지막화(무료기준)를 입력해주세요 (예: 웹툰명 1 100): ").split()
+        web_name, web_no, max_no = input("웹툰의 이름과 번호, 몇화까지 다운로드 했는지를 입력해주세요 (예: 웹툰명 10000 5): ").split()
         await Handler.set(int(web_no), web_name, int(max_no))
         await Handler.pdf()
     except ValueError:
